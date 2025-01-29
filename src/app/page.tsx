@@ -7,7 +7,6 @@ import Brand from "./components/Brand";
 
 import Benefit from "./components/Banefit";
 
-
 export default function page() {
   return (
     <div>
@@ -15,16 +14,10 @@ export default function page() {
       <Brand />
 
       <Home />
-      {/* <FeaturedCategories /> */}
 
       <Benefit />
 
       <Touch />
-      {/* <CartContext /> */}
-      
-     
-
-      
     </div>
   );
 }

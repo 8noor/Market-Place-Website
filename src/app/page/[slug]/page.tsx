@@ -8,8 +8,9 @@ import { SanityImageSource } from "@sanity/image-url/lib/types/types";
 
 // Interface for the dynamic route params
 interface ProductPageProps {
-  params: { slug: string };
+  params: Promise<{ slug: string }>
 }
+
 
 // Helper to build image URLs from Sanity
 const builder = imageUrlBuilder(client);
@@ -39,7 +40,7 @@ async function getProduct(slug: string): Promise<Product | null> {
 }
 
 export default async function ProductPage({ params }: ProductPageProps) {
-  const { slug } = params;
+  const { slug } = await params;
   const product = await getProduct(slug);
 
   if (!product) {
